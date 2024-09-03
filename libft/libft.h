@@ -7,3 +7,8 @@
 
 typedef unsigned char t_char;
 typedef unsigned int t_int;
+
+int ft_isalpha(int c);
+int ft_isdigit(int c);
+
+#endif
