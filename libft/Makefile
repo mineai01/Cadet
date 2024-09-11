@@ -1,26 +1,30 @@
-NAME = libft.a
-CFLAGS = -Wall -Werror -Wextra -I $(INCLUDES)
-INCLUDES = libft.h
+
 FILES = ft_isalpha.c \
 				ft_isdigit.c \
+				ft_isascii.c \
+				ft_isalnum.c \
+				ft_isprint.c \
+				ft_strlen.c \
 
 OBJ = $(FILES:.c=.o)
 
+CC = gcc
+RM = rm -f
+CFLAGS = -Wall -Werror -Wextra -I.
+
+NAME = libft.a
+
 all: $(NAME)
 
-$(NAME):
-	gcc $(CFLAGS) -c $(FILES)
-	ar rc $(NAME) $(OBJ)
-	ranlib $(NAME)
+$(NAME):$(OBJ)
+	ar rcs $(NAME) $(OBJ)
 
 clean:
-	rm -rf $(OBJ)
-	echo " libft: clean: objects cleaned."
+	$(RM) $(OBJ)
 
 fclean: clean
-	rm -f $(NAME)
-	echo "Livft: fclean: library deleted."
+	$(RM) $(NAME)
 
 re: fclean all
 
-.PHONY: c;ean fclean all re
+.PHONY: all clean fclean re
