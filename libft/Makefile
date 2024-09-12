@@ -8,11 +8,14 @@ FILES = ft_isalpha.c \
 
 OBJ = $(FILES:.c=.o)
 
-CC = gcc
+CC = cc
 RM = rm -f
 CFLAGS = -Wall -Werror -Wextra -I.
 
 NAME = libft.a
+
+%.o: %.c Makefile libft.h
+	$(CC) $(CFLAGS) -c $< -o $@
 
 all: $(NAME)
 
