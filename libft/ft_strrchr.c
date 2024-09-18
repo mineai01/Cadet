@@ -1,40 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pbanlang <mineai01@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/18 20:07:04 by pbanlang          #+#    #+#             */
-/*   Updated: 2024/09/18 20:07:05 by pbanlang         ###   ########.fr       */
+/*   Created: 2024/09/18 20:08:03 by pbanlang          #+#    #+#             */
+/*   Updated: 2024/09/18 21:46:29 by pbanlang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+char	*ft_strrchr(const char *s, int c)
 {
-	char	digit;
+	int		i;
+	char	*res;
 
-	if (n == -2147483648)
-		write(fd, "-2147483648", 11);
-	else if (n < 0)
+	i = 0;
+	res = NULL;
+	while (s[i])
 	{
-		write(fd, "-", 1);
-		n = -n;
-		ft_putnbr_fd(n, fd);
-	}
-	else
-	{
-		if (n > 9)
+		if (s[i] == (char)c)
 		{
-			ft_putnbr_fd(n / 10, fd);
-			ft_putnbr_fd(n % 10, fd);
+			res = ((char *)(s + i));
 		}
-		else
-		{
-			digit = n + 48;
-			write(fd, &digit, 1);
-		}
+		i++;
 	}
+	if (s[i] == c)
+		res = ((char *)(s + i));
+	return (res);
 }
