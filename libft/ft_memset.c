@@ -6,7 +6,7 @@
 /*   By: pbanlang <mineai01@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 20:06:55 by pbanlang          #+#    #+#             */
-/*   Updated: 2024/09/18 20:06:56 by pbanlang         ###   ########.fr       */
+/*   Updated: 2024/09/19 19:31:00 by pbanlang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,13 @@
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-    unsigned char *ptr;
-    
-    ptr = (unsigned char *) b;
+	unsigned char	*ptr;
 
-    while (len > 0)
-    {
-        *(ptr++) = (unsigned char) c;
-
-        len--;
-    }
-    return (b);
+	ptr = (unsigned char *) b;
+	while (len > 0)
+	{
+		*(ptr++) = (unsigned char) c;
+		len--;
+	}
+	return (b);
 }

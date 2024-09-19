@@ -6,11 +6,11 @@
 /*   By: pbanlang <mineai01@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 20:06:15 by pbanlang          #+#    #+#             */
-/*   Updated: 2024/09/18 20:06:16 by pbanlang         ###   ########.fr       */
+/*   Updated: 2024/09/19 19:53:42 by pbanlang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
-    return (c >= '0' && c <= '9');
+	return (c >= '0' && c <= '9');
 }

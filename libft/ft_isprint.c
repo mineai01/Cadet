@@ -6,11 +6,11 @@
 /*   By: pbanlang <mineai01@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 20:06:20 by pbanlang          #+#    #+#             */
-/*   Updated: 2024/09/18 20:06:21 by pbanlang         ###   ########.fr       */
+/*   Updated: 2024/09/19 19:53:15 by pbanlang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isprint(int c)
+int	ft_isprint(int c)
 {
-    return (c >= 32 && c <= 126);
+	return (c >= 32 && c <= 126);
 }

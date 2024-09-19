@@ -6,7 +6,7 @@
 /*   By: pbanlang <mineai01@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 20:08:03 by pbanlang          #+#    #+#             */
-/*   Updated: 2024/09/18 21:46:29 by pbanlang         ###   ########.fr       */
+/*   Updated: 2024/09/19 19:56:21 by pbanlang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,14 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int		i;
-	char	*res;
+	int	i;
 
-	i = 0;
-	res = NULL;
-	while (s[i])
+	i = ft_strlen(s);
+	while (i >= 0)
 	{
 		if (s[i] == (char)c)
-		{
-			res = ((char *)(s + i));
-		}
-		i++;
+			return ((char *)s + i);
+		i--;
 	}
-	if (s[i] == c)
-		res = ((char *)(s + i));
-	return (res);
+	return (NULL);
 }

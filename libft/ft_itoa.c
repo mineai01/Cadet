@@ -6,58 +6,58 @@
 /*   By: pbanlang <mineai01@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 20:06:26 by pbanlang          #+#    #+#             */
-/*   Updated: 2024/09/18 20:06:27 by pbanlang         ###   ########.fr       */
+/*   Updated: 2024/09/19 19:41:33 by pbanlang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int ft_nbrlen(long n)
+static int	ft_nbrlen(long n)
 {
-    int i;
+	int	i;
 
-    i = 1;
-    if (n < 0)
-    {
-        n *= -1;
-        i++;
-    }
-    while (n > 9)
-    {
-        n /= 10;
-        i++;
-    }
-    return (i);
+	i = 1;
+	if (n < 0)
+	{
+		n *= -1;
+		i++;
+	}
+	while (n > 9)
+	{
+		n /= 10;
+		i++;
+	}
+	return (i);
 }
 
-static void ft_putnbr(long n, char *str, int *i)
+static void	ft_putnbr(long n, char *str, int *i)
 {
-    if ( n > 9)
-    {
-        ft_putnbr(n / 10, str, i);
-        ft_putnbr(n % 10, str, i);
-    }
-    else
-        str[(*i)++] = n + '0';
+	if (n > 9)
+	{
+		ft_putnbr(n / 10, str, i);
+		ft_putnbr(n % 10, str, i);
+	}
+	else
+		str[(*i)++] = n + '0';
 }
 
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-    char *str;
-    int i;
-    long nbr;
+	char	*str;
+	int		i;
+	long	nbr;
 
-    nbr = n;
-    str = malloc(sizeof(char) * (ft_nbrlen(nbr) + 1));
-    if(!str)
-        return (0);
-    i = 0;
-    if (nbr < 0)
-    {
-        str[i++] = '-';
-        nbr *= -1;
-    }
-    ft_putnbr(nbr, str, &i);
-    str[i] = '\0';
-    return (str);
+	nbr = n;
+	str = malloc(sizeof(char) * (ft_nbrlen(nbr) + 1));
+	if (!str)
+		return (0);
+	i = 0;
+	if (nbr < 0)
+	{
+		str[i++] = '-';
+		nbr *= -1;
+	}
+	ft_putnbr(nbr, str, &i);
+	str[i] = '\0';
+	return (str);
 }

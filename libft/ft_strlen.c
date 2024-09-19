@@ -6,13 +6,13 @@
 /*   By: pbanlang <mineai01@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 20:07:44 by pbanlang          #+#    #+#             */
-/*   Updated: 2024/09/18 21:03:02 by pbanlang         ###   ########.fr       */
+/*   Updated: 2024/09/19 19:52:42 by pbanlang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strlen(const char *s)
+size_t	ft_strlen(const char *s)
 {
 	size_t	i;
 
